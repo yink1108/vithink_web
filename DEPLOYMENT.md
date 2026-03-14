@@ -1,6 +1,6 @@
 # GitHub Pages 部署指南
 
-本指南将帮助您将网站部署到 GitHub Pages，使用 `/yinkun/` 作为基础路径。
+本指南将帮助您将网站部署到 GitHub Pages，基础路径会根据仓库名自动设置为 `/${repo-name}/`。
 
 ## ⚠️ 重要提示
 
@@ -76,7 +76,7 @@ git push -u origin main
 
 部署完成后（通常需要几分钟），访问：
 ```
-https://你的用户名.github.io/yinkun/
+https://你的用户名.github.io/仓库名/
 ```
 
 ### 方法二：手动部署（使用 gh-pages）
@@ -112,18 +112,18 @@ pnpm deploy
 
 几分钟后访问：
 ```
-https://你的用户名.github.io/yinkun/
+https://你的用户名.github.io/仓库名/
 ```
 
 ## 重要配置说明
 
 ### Base Path 配置
 
-项目已配置为使用 `/yinkun/` 作为基础路径。配置文件在 `vite.config.js`：
+项目已配置为基础路径会根据仓库名自动设置为 `/${repo-name}/`。配置文件在 `vite.config.js`：
 
 ```javascript
 export default defineConfig({
-  base: '/yinkun/',
+  base: process.env.VITE_BASE_PATH || '/web/',
   // ...
 })
 ```
@@ -133,7 +133,7 @@ export default defineConfig({
 项目使用 `HashRouter` 而不是 `BrowserRouter`，这样可以：
 - 避免 GitHub Pages 的 404 问题
 - 无需服务器配置
-- URL 格式：`https://你的用户名.github.io/yinkun/#/services`
+- URL 格式：`https://你的用户名.github.io/仓库名/#/services`
 
 ### 修改基础路径
 

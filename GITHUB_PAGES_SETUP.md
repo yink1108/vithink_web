@@ -86,7 +86,7 @@ Source: GitHub Actions
    - 查看工作流运行状态
 
 5. **访问网站**
-   - 部署成功后访问：`https://你的用户名.github.io/yinkun/`
+   - 部署成功后访问：`https://你的用户名.github.io/仓库名/`
 
 ---
 
@@ -130,5 +130,5 @@ Source: GitHub Actions
 
 - `.github/workflows/deploy.yml` - GitHub Actions 部署配置
 - `.nojekyll` - 禁用 Jekyll 处理
-- `vite.config.js` - 构建配置（base: '/yinkun/'）
+- `vite.config.js` - 构建配置（base: process.env.VITE_BASE_PATH || '/web/'）
 

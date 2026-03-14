@@ -54,7 +54,7 @@ web/
 │       └── deploy.yml    # GitHub Actions 部署配置
 ├── index.html           # HTML 模板
 ├── package.json         # 项目配置
-├── vite.config.js      # Vite 配置（已配置 base: '/yinkun/'）
+├── vite.config.js      # Vite 配置（支持通过环境变量覆盖 base）
 ├── tailwind.config.js  # Tailwind 配置
 └── postcss.config.js   # PostCSS 配置
 ```
@@ -106,7 +106,7 @@ pnpm preview
 
 ### GitHub Pages 部署（推荐）
 
-本项目已配置为部署到 GitHub Pages，使用 `/yinkun/` 作为基础路径。
+本项目已配置为部署到 GitHub Pages。CI 会自动使用仓库名生成基础路径（`/<repo-name>/`），本地默认是 `/web/`。
 
 ⚠️ **重要**：GitHub Pages 免费版仅支持公开仓库。如果仓库是私有的，需要先将其设置为公开。详细步骤请参考 [GITHUB_SETUP.md](./GITHUB_SETUP.md)。
 
@@ -128,7 +128,7 @@ pnpm preview
    - GitHub Actions 会自动构建并部署
 
 3. **访问网站**
-   - 部署完成后，访问：`https://[你的用户名].github.io/yinkun/`
+   - 部署完成后，访问：`https://[你的用户名].github.io/[仓库名]/`
 
 #### 手动部署
 
@@ -146,6 +146,8 @@ pnpm add -D gh-pages
 pnpm deploy
 ```
 
+> 提示：如果你采用“从分支部署静态文件”的方式，必须确保仓库里包含最新构建产物（`dist/`）。
+
 ### Vercel 部署
 
 1. 将代码推送到 GitHub/GitLab/Bitbucket
@@ -155,7 +157,7 @@ pnpm deploy
    - **Build Command**: `pnpm build`
    - **Output Directory**: `dist`
    - **Install Command**: `pnpm install`
-4. 如果需要使用 `/yinkun/` 前缀，在 Vercel 设置中添加环境变量或使用重写规则
+4. 如果需要使用子路径前缀，可在构建时设置环境变量 `VITE_BASE_PATH`
 
 ### Netlify 部署
 
@@ -191,14 +193,15 @@ server {
 
 ### GitHub Pages 路径配置
 
-- **Base Path**: `/yinkun/`
+- **Base Path**: GitHub Actions 中自动设置为 `/${repo-name}/`
+- **本地默认**: `/web/`（可通过 `VITE_BASE_PATH` 覆盖）
 - **路由模式**: HashRouter（自动处理路径，无需服务器配置）
-- **配置文件**: `vite.config.js` 中已设置 `base: '/yinkun/'`
+- **配置文件**: `vite.config.js`
 
 如果需要在其他路径部署，修改 `vite.config.js` 中的 `base` 配置：
 ```javascript
 export default defineConfig({
-  base: '/your-path/',  // 修改这里
+  base: process.env.VITE_BASE_PATH || '/web/',
   // ...
 })
 ```
