@@ -595,10 +595,10 @@ const Home = () => {
                   {getTranslation(language, 'contact.email')}
                 </h3>
                 <a
-                  href="mailto:contact@novabridge.com"
+                  href="mailto:contact@vithink.com"
                   className="text-primary-600 hover:text-primary-700 text-lg font-semibold"
                 >
-                  contact@novabridge.com
+                  contact@vithink.com
                 </a>
               </div>
               <div className="text-center">

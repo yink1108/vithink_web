@@ -62,7 +62,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <Link to="/" className={`text-2xl font-bold ${logoClass}`}>
-              NovaBridge
+              VITHINK
             </Link>
           </motion.div>
 

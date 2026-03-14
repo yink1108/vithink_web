@@ -10,7 +10,7 @@ export const translations = {
     home: {
       bannerTitle: 'Connecting China and Global Markets',
       bannerSubtitle: 'Your trusted partner for international business expansion',
-      introTitle: 'Welcome to NovaBridge Consulting',
+      introTitle: 'Welcome to VITHINK Consulting',
       introText: 'We are a global business consulting firm specializing in helping Chinese enterprises expand overseas markets, international M&A and investment support, cross-cultural business cooperation, and business execution services.',
       servicesTitle: 'Our Services',
       processTitle: 'Our Process',
@@ -82,7 +82,7 @@ export const translations = {
     },
     footer: {
       location: 'Location: Beijing, China',
-      email: 'contact@novabridge.com',
+      email: 'contact@vithink.com',
       icp: '',
     },
   },
@@ -97,7 +97,7 @@ export const translations = {
     home: {
       bannerTitle: '连接中国与世界市场',
       bannerSubtitle: '您值得信赖的国际化业务拓展伙伴',
-      introTitle: '欢迎来到 NovaBridge Consulting',
+      introTitle: '欢迎来到 VITHINK Consulting',
       introText: '我们是一家面向全球市场的商业咨询公司，专注于帮助中国企业拓展海外市场、国际并购与投融资支持、跨文化商业合作与业务落地执行服务。',
       servicesTitle: '我们的服务',
       processTitle: '服务流程',
@@ -169,7 +169,7 @@ export const translations = {
     },
     footer: {
       location: '地址：中国北京',
-      email: 'contact@novabridge.com',
+      email: 'contact@vithink.com',
       icp: '',
     },
   },
