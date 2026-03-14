@@ -1,6 +1,6 @@
-# NovaBridge Consulting - 企业官网
+# VITHINK Consulting - 企业官网
 
-这是一个为 NovaBridge Consulting 商业咨询公司创建的静态企业官网，使用 React + Vite 构建，支持中英文双语切换。
+这是一个为 VITHINK Consulting 商业咨询公司创建的静态企业官网，使用 React + Vite 构建，支持中英文双语切换。
 
 ## 技术栈
 
@@ -243,4 +243,4 @@ MIT License
 
 ## 联系方式
 
-如有问题或建议，请联系：contact@novabridge.com
+如有问题或建议，请联系：contact@vithink.com

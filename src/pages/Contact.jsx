@@ -87,10 +87,10 @@ const Contact = () => {
                   {getTranslation(language, 'contact.email')}
                 </h2>
                 <a
-                  href="mailto:contact@novabridge.com"
+                  href="mailto:contact@vithink.com"
                   className="text-primary-600 hover:text-primary-700 text-lg font-medium inline-flex items-center gap-2 transition-colors"
                 >
-                  contact@novabridge.com
+                  contact@vithink.com
                 </a>
               </motion.div>
 
